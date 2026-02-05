@@ -1,4 +1,5 @@
 import { muvelet, muveletLetrehoz } from "./functions.js"
+import { Gomb } from "./gomb.js"
 
 
 const input = document.createElement('input')
@@ -24,3 +25,7 @@ gomb.addEventListener('click', function(){
 
 const fv = muveletLetrehoz("+")
 console.log(fv(1,2))
+
+new Gomb (input, inputKetto, "+", div)
+new Gomb (input, inputKetto, "-", div)
+new Gomb (input, inputKetto, "*", div)
