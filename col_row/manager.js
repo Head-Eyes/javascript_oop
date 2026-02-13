@@ -4,7 +4,6 @@
 
 /**
  * @type {ColspanType[] | RowspanType[]}
- * 
  * @callback addCallback
  * @param {ColspanType | RowspanType} param
  * @returns {void}
@@ -16,7 +15,7 @@ class Manager {
      * @type {addCallback}
      */
     #addCallback
-    set addCallback(nemtudom)
+    set addCallback(nemtudom) 
     {
         this.#addCallback = nemtudom
     }
