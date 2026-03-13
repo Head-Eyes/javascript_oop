@@ -27,6 +27,12 @@ class Table extends ViewElement{
         this.#tbody = document.createElement('tbody');
         table.appendChild(this.#tbody);
         this.#manager.TableCallback = (authorList) =>{
+            if(authorList.length == 0){
+                const tr = document.createElement('tr');
+                this.#tbody.appendChild(tr)
+                const td = createTableCell(tr, 'Nincs megjelenítendő elem!');
+                td.colSpan = 3
+            }
             for(const author of authorList){
                 const tr = document.createElement('tr');
                 this.#tbody.appendChild(tr);
@@ -35,6 +41,10 @@ class Table extends ViewElement{
                 createTableCell(tr, author.work);
                 createTableCell(tr, author.concept);
             }
+        }
+        this.activateCallback = () =>{
+            this.#tbody.innerHTML = '';
+            this.#manager.getAllElement();
         }
     }
 }
